@@ -1,201 +1,183 @@
+<!DOCTYPE html>
 <html>
-
-    <head>
-
-        <title>ATM PIN Verification</title>
-
-        <style>
-
-            body {
-
-                font-family: Arial, sans-serif;
-
-                background-color: #f2f2f2;
-
-                text-align: center;
-
-                padding: 40px;
-
-            }
-
-            h2 {
-
-                color: #1a5cff;
-
-                margin: 5px 0;
-
-            }
-
-            input {
-
-                padding: 8px;
-
-                font-size: 15px;
-
-                margin-top: 10px;
-
-                border: 1px solid #ccc;
-
-                border-radius: 4px;
-
-            }
-
-            button {
-
-                display: block;
-
-                margin: 15px auto 0;
-
-                padding: 8px 20px;
-
-                font-size: 15px;
-
-                background-color: #1a5cff;
-
-                color: white;
-
-                border: none;
-
-                border-radius: 4px;
-
-                cursor: pointer;
-
-            }
-
-            button:hover {
-
-                background-color: #0d3fb0;
-
-            }
-
-            #result {
-
-                margin-top: 20px;
-
-                font-size: 17px;
-
-                color: #333;
-
-            }
-
-        </style>
-
-    </head>
-
-    <body>
-
-        <h2>Sanvi Wadhankar 24070521191</h2>
-
-        <h2>ATM Card PIN Verification</h2>
-
-        <h3>Enter your 6-digit PIN:</h3>
-
-        <input type='text' id='pin' maxlength="6"></input>
-
-        <button onClick="verifyPin()">Submit</button>
-
-        <p id='result'></p>
-
-
-
-        <script>
-
-            // FUNCTION DECLARATION
-
-            // Reverses the entered PIN
-
-            function reversePin(pin) {
-
-                return pin.split("").reverse().join("");
-
-            }
-
-
-
-            // FUNCTION EXPRESSION
-
-            // Checks whether the PIN is a palindrome (reads same forward and backward)
-
-            var isPalindrome = function(pin) {
-
-                var reversed = reversePin(pin);   // uses the function declared above
-
-                return pin === reversed;
-
-            };
-
-
-
-            // ARROW FUNCTION
-
-            // Displays the security message based on the result
-
-            var getMessage = (palindromeCheck) => {
-
-                if (palindromeCheck) {
-
-                    return "Security Alert: Your PIN is a palindrome!";
-
-                } else {
-
-                    return "PIN verified. No special security message.";
-
-                }
-
-            };
-
-
-
-            // MAIN FUNCTION (called on button click)
-
-           // MAIN FUNCTION (called on button click)
-
-function verifyPin() {
-
-    var pin = document.getElementById("pin").value; // local scope variable
-
-
-
-    if (pin == "" || pin.length !== 6 || isNaN(pin)) {
-
-        alert("Please enter a valid 6-digit PIN!");
-
-        return;
-
+<head>
+<title>Department Home</title>
+<style>
+    body {
+        background-color: #f5f8ff;
+        font-family: Arial, sans-serif;
+       
+margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #1a5cff;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 26px;
+    }
+    header p {
+        margin: 5px 0 0;
+        font-size: 14px;
+    }
+    .content {
+        max-width: 500px;
+        margin: 30px auto;
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    .content h2 {
+        color: #1a5cff;
+        cursor: pointer;
     }
 
-
-
-    var reversed = reversePin(pin);
-
-    var palindromeCheck = isPalindrome(pin);
-
-    var message = getMessage(palindromeCheck);
-
-
-
-    // Alert user if the PIN is a palindrome
-
-    if (palindromeCheck) {
-
-        alert("⚠️ Security Alert!\nYour PIN is a palindrome.\nFor better security, please change your ATM PIN.");
-
+    .content p {
+        color: #444;
+        line-height: 1.6;
     }
+    a.btn {
+        display: inline-block;
+        margin-top: 10px;
+        background-color: #1a5cff;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    a.btn:hover {
+        background-color: #0d3fb0;
+    }
+    footer {
+        text-align: center;
+        color: #888;
+        font-size: 12px;
+        margin: 30px 0 10px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>SIT Nagpur</h1>
+        <p>Department of Computer Science</p>
+    </header>
 
+    <div class="content">
+        <!-- INLINE JS --
+ <h2 onclick="console.log('Inline JS: Department title clicked!')">
+            Welcome to our Department Page
+        </h2>
+        <p>Click the heading above to see an inline JS console message. This page also links to the student information page below.</p>
+<a class="btn" href="student-info.html">View Student Information</a>
+    </div>
+<footer>Made by a Student &middot; SIT Nagpur</footer>
+<script>
+        // INTERNAL JS
+        console.log("Internal JS: Department page loaded successfully.");
+    </script>
+<!-- EXTERNAL JS -->
+    <script src="script.js"></script>
+</body>
+</html>
+Student Info (html):-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Information</title>
+<style>
+    body {
+        background-color: #f5f8ff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #1a5cff;
+ color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .content {
+        max-width: 500px;
+        margin: 30px auto;
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    table {
+        margin: 15px auto;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td, th {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    th {
+        background-color: #eef3ff;
+        color: #1a5cff;
 
+ }
 
-    document.getElementById("result").innerHTML =
+    a.btn {
+        display: inline-block;
+        margin-top: 15px;
+        background-color: #1a5cff;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    a.btn:hover {
+        background-color: #0d3fb0;
+      footer {
+        text-align: center;
+        color: #888;
+        font-size: 12px;
+        margin: 30px 0 10px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Student Information</h1>
+    </header>
+<div class="content">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll No.</th>
+                <th>Branch</th>
+            </tr>
+            <tr>
+                <td>Your Name</td>
+                <td>101</td>
+                <td>Computer Science</td>
+            </tr>
+        </table>
 
-        "PIN entered = " + pin + "<br>" +
+        <a class="btn" href="department.html">Back to Department Home</a>
+    </div>
 
-        "Reversed PIN = " + reversed + "<br>" +
-
-        message;
-
-}
-
-        </script>
-
-    </body>
-
+    <footer>Made by a Student &middot; SIT Nagpur</footer>
+    <script>
+        // INTERNAL JS
+        console.log("Internal JS: Student information page loaded.");
+    </script>
+</body>
 </html>
